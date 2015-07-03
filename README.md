@@ -1,4 +1,4 @@
-# CharacterEncodingValidator
+# CharacterEncodingValidator [![Build Status](https://travis-ci.org/takatoshiono/character_encoding_validator.svg?branch=master)](https://travis-ci.org/takatoshiono/character_encoding_validator)
 
 A character encoding validator for Rails. This is used to detect encoding errors.
 
