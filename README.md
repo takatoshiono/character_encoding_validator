@@ -1,10 +1,11 @@
 # CharacterEncodingValidator
 
-A character encoding validator for Rails.
+A character encoding validator for Rails. This is used to detect encoding errors.
 
-* Try encode the string
-* Rescue exceptions
-* Add errors
+This validator does the followings.
+
+* Try encode the string to the destination encoding.
+* If the exception raises, rescue it and add an error
 
 ## Installation
 
