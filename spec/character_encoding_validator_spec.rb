@@ -21,24 +21,24 @@ describe CharacterEncodingValidator do
     context 'when encoding is eucjp-ms' do
       let(:encoding) { 'eucjp-ms' }
 
-      context 'when include only encodable characters' do
-        let(:attr) { 'ペペペ太郎' }
+      context 'when not include unencodable characters' do
+        let(:attr) { 'あいうえお' }
         it { is_expected.to be_valid }
       end
 
       context 'when include unencodable characters' do
         describe '〜 (U+301C WAVE DASH)' do
-          let(:attr) { "ペペペ\u{301C}太郎" }
+          let(:attr) { "あいう\u{301C}えお" }
           it { is_expected.not_to be_valid }
         end
 
         describe '− (U+2212 MINUS SIGN)' do
-          let(:attr) { "ペペペ\u{2212}太郎" }
+          let(:attr) { "あいう\u{2212}えお" }
           it { is_expected.not_to be_valid }
         end
 
         describe ':curry: (U+1F35B CURRY AND RICE)' do
-          let(:attr) { "ペペペ太郎\u{1F35B}" }
+          let(:attr) { "あいう\u{1F35B}えお" }
           it { is_expected.not_to be_valid }
         end
       end
